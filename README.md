@@ -1,37 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trinethra — Supervisor Feedback Analyzer
 
-## Getting Started
+AI-assisted behavioral assessment tool built for the DeepThought Software Developer Internship assignment.
 
-First, run the development server:
+Trinethra helps psychology interns analyze supervisor feedback transcripts of DT Fellows using a locally running LLM through Ollama. The tool extracts behavioral evidence, evaluates operational maturity, maps KPI impact, detects assessment gaps, and generates structured follow-up questions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+At DeepThought, psychology interns manually review supervisor feedback calls to assess Fellow performance. This process normally takes 45–60 minutes per transcript.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project reduces the effort by generating a structured AI-assisted draft analysis in around 20–30 seconds using a local LLM.
 
-## Learn More
+The system does **not replace human judgment**. It generates a draft assessment that interns can review and refine.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Transcript Analysis
+- Paste supervisor transcript
+- Run AI-powered assessment locally using Ollama
 
-## Deploy on Vercel
+## Structured Output
+The system generates:
+- Behavioral evidence extraction
+- Rubric-based scoring (1–10)
+- KPI mapping
+- Gap analysis
+- Follow-up questions
+- Operational Layer 1 vs Layer 2 assessment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Sample Transcript Support
+Includes all 3 assignment transcripts:
+- Karthik Narayanan
+- Meena Krishnamurthy
+- Anil Menon
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Trinethra
+## Human-Centered UI
+Designed for non-technical users:
+- Clear information hierarchy
+- Confidence indicators
+- Layer 1 vs Layer 2 visualization
+- AI draft warnings
+- Structured analysis cards
+
+## Modern Loading Experience
+Interactive loading screen showing:
+- behavioral analysis stages
+- KPI mapping progress
+- survivability checks
+- local model runtime information
+
+## Local AI Runtime
+- No cloud APIs
+- No OpenAI
+- No Anthropic
+- Runs completely locally using Ollama
+
+---
+
+# Tech Stack
+
+## Frontend
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+## Backend
+- Next.js API Routes
+
+## AI Runtime
+- Ollama
+- llama3.2
+
+---
+
+# Why llama3.2?
+
+I selected `llama3.2` because:
+- Better reasoning quality for behavioral analysis
+- More consistent scoring across transcripts
+- Stronger contextual understanding
+- Better handling of supervisor bias and survivability logic
+- Improved structured JSON generation reliability
+
+Although slightly slower than smaller models, it produced more accurate operational assessments and more reliable rubric-based reasoning.
+
+---
+
+# Architecture
+
+```txt
+Frontend (Next.js UI)
+        ↓
+API Route (/api/analyze)
+        ↓
+Prompt Builder
+        ↓
+Ollama Local API
+        ↓
+llama3.2 Model
+        ↓
+Structured JSON Analysis
+        ↓
+Dashboard UI Rendering
