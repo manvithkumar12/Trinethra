@@ -106,4 +106,4 @@ llama3.2 Model
         ↓
 Structured JSON Analysis
         ↓
-Dashboard UI Rendering
+Dashboard UI Rendering# trinethra-dashboard
