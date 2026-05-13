@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { buildAnalysisPrompt } from "@/lib/prompt";
-import { fetchOllama } from "@/app/apiCalls/fetchOllama";
+import { fetchOllama } from "@/app/services/fetchOllama";
 
 export async function POST(req: NextRequest) {
   try {

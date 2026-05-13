@@ -20,7 +20,7 @@ import ErrorState from "@/components/dashboard/ErrorState";
 
 import { AnalysisResult } from "@/types/dashboard";
 
-import { fetchResponse } from "./apiCalls/fetchResponse";
+import { fetchResponse } from "./services/fetchResponse";
 
 import toast from "react-hot-toast";
 

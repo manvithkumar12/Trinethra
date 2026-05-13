@@ -101,4 +101,3 @@ export default function AnalysisSummaryCard({ result }: Props) {
     </div>
   );
 }
-hs
