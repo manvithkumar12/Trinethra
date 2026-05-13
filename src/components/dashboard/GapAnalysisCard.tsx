@@ -1,6 +1,6 @@
-import React from 'react';
-import { Gap } from '@/types/dashboard';
-import { TriangleAlert, AlertCircle } from 'lucide-react';
+import React from "react";
+import { Gap } from "@/types/dashboard";
+import { TriangleAlert, AlertCircle } from "lucide-react";
 
 interface Props {
   gaps: Gap[];
@@ -22,9 +22,9 @@ export default function GapAnalysisCard({ gaps }: Props) {
       </div>
 
       <div className="flex flex-col gap-3">
-        {gaps.map((gap) => (
-          <div 
-            key={gap.id}
+        {gaps.map((gap, index) => (
+          <div
+            key={index}
             className="flex items-start gap-3 p-3 rounded-xl border border-amber-100 dark:border-amber-900/30 bg-amber-50/30 dark:bg-amber-900/10"
           >
             <AlertCircle size={16} className="text-amber-500 mt-0.5 shrink-0" />

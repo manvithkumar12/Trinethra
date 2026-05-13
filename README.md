@@ -12,22 +12,18 @@ At DeepThought, psychology interns manually review supervisor feedback calls to 
 
 This project reduces the effort by generating a structured AI-assisted draft analysis in around 20–30 seconds using a local LLM.
 
-The system does **not replace human judgment**.  
-It generates a draft assessment that interns can review and refine.
+The system does **not replace human judgment**. It generates a draft assessment that interns can review and refine.
 
 ---
 
 # Features
 
 ## Transcript Analysis
-
 - Paste supervisor transcript
 - Run AI-powered assessment locally using Ollama
 
 ## Structured Output
-
 The system generates:
-
 - Behavioral evidence extraction
 - Rubric-based scoring (1–10)
 - KPI mapping
@@ -36,17 +32,13 @@ The system generates:
 - Operational Layer 1 vs Layer 2 assessment
 
 ## Sample Transcript Support
-
 Includes all 3 assignment transcripts:
-
 - Karthik Narayanan
 - Meena Krishnamurthy
 - Anil Menon
 
 ## Human-Centered UI
-
 Designed for non-technical users:
-
 - Clear information hierarchy
 - Confidence indicators
 - Layer 1 vs Layer 2 visualization
@@ -54,16 +46,13 @@ Designed for non-technical users:
 - Structured analysis cards
 
 ## Modern Loading Experience
-
 Interactive loading screen showing:
-
 - behavioral analysis stages
 - KPI mapping progress
 - survivability checks
 - local model runtime information
 
 ## Local AI Runtime
-
 - No cloud APIs
 - No OpenAI
 - No Anthropic
@@ -74,7 +63,6 @@ Interactive loading screen showing:
 # Tech Stack
 
 ## Frontend
-
 - Next.js 15
 - React
 - TypeScript
@@ -82,32 +70,24 @@ Interactive loading screen showing:
 - Framer Motion
 
 ## Backend
-
 - Next.js API Routes
 
 ## AI Runtime
-
 - Ollama
-- phi3:mini model
+- llama3.2
 
 ---
 
-# Why phi3:mini?
+# Why llama3.2?
 
-I selected `phi3:mini` because:
+I selected `llama3.2` because:
+- Better reasoning quality for behavioral analysis
+- More consistent scoring across transcripts
+- Stronger contextual understanding
+- Better handling of supervisor bias and survivability logic
+- Improved structured JSON generation reliability
 
-- Faster inference on lower-end systems
-- Smaller memory footprint
-- Better local performance for structured JSON generation
-- Reduced response time compared to larger models
-
-This project prioritizes:
-
-- consistency
-- structured outputs
-- local execution speed
-
-over raw model size.
+Although slightly slower than smaller models, it produced more accurate operational assessments and more reliable rubric-based reasoning.
 
 ---
 
@@ -122,9 +102,8 @@ Prompt Builder
         ↓
 Ollama Local API
         ↓
-phi3:mini Model
+llama3.2 Model
         ↓
 Structured JSON Analysis
         ↓
 Dashboard UI Rendering
-```

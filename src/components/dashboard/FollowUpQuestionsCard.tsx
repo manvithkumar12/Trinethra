@@ -18,7 +18,7 @@ export default function FollowUpQuestionsCard({ questions }: Props) {
 
       <div className="flex flex-col gap-4">
         {questions.map((q, index) => (
-          <div key={q.id} className="relative pl-8">
+          <div key={index} className="relative pl-8">
             {/* Number indicator */}
             <div className="absolute left-0 top-0 w-6 h-6 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center text-xs font-semibold">
               {index + 1}

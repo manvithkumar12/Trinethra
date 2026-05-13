@@ -18,8 +18,6 @@ import EmptyState from "@/components/dashboard/EmptyState";
 import LoadingState from "@/components/dashboard/LoadingState";
 import ErrorState from "@/components/dashboard/ErrorState";
 
-import { defaultTranscript } from "@/lib/mockData";
-
 import { AnalysisResult } from "@/types/dashboard";
 
 import { fetchResponse } from "./apiCalls/fetchResponse";
@@ -110,7 +108,7 @@ export default function Dashboard() {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                <div className="flex flex-col  gap-6">
                   <EvidenceCard evidence={result.evidence} />
 
                   <div className="flex flex-col gap-6">

@@ -80,9 +80,7 @@ export default function LoadingState() {
             <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium">
               <Cpu size={14} />
               Model:
-              <span className="text-gray-900 dark:text-gray-200">
-                phi3:mini
-              </span>
+              <span className="text-gray-900 dark:text-gray-200">llama3.2</span>
             </div>
 
             <div className="hidden md:block w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />

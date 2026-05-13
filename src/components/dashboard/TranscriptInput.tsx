@@ -77,8 +77,8 @@ export default function TranscriptInput({
           >
             <option value="">Load Sample Transcript</option>
 
-            {sampleTranscripts.map((item) => (
-              <option key={item.id} value={item.id}>
+            {sampleTranscripts.map((item, index) => (
+              <option key={index} value={item.id}>
                 {item.fellow.name}
               </option>
             ))}
